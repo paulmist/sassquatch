@@ -1,0 +1,85 @@
+/* Sassquatch 1.0 */
+
+// Border Radius
+@mixin border-radius($radius: 5px) {
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+// Drop shadows
+@mixin box-shadow($shadow: 0 1px 3px rgba(0,0,0,.25)) {
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+// Transitions
+@mixin transition($transition) {
+	-webkit-transition: $transition;
+	-moz-transition: $transition;
+	transition: $transition;
+}
+// CSS3 Content Columns
+@mixin content-columns($columnCount, $columnGap: 20px) {
+	-webkit-column-count: $columnCount;
+	-webkit-column-gap: $columnGap;
+	-moz-column-count: $columnCount;
+	-moz-column-gap: $columnGap;
+	column-count: $columnCount;
+	column-gap: $columnGap;
+}
+// Opacity
+@mixin opacity($opacity: 0.5) {
+	filter:			alpha(opacity=($opacity * 100));
+	-ms-filter:		"progid:DXImageTransform.Microsoft.Alpha(Opacity=" + ($opacity * 100) + ")";
+	-moz-opacity:	$opacity;
+	-khtml-opacity: $opacity;
+	opacity:		$opacity;
+}
+// CSS3 Flexible Box Module
+// #flexbox > @mixin display-box; must be used along with other flexbox mixins
+@mixin display-box { 
+	display: -moz-box;
+	display: -webkit-box;
+	display: box;
+}
+// Box align [ start | end | center | baseline | stretch ]
+@mixin box-align($alignment: stretch) {
+	-moz-box-align: $alignment;
+	-webkit-box-align: $alignment;
+	box-align: $alignment;
+}
+// Box direction [ normal | reverse | inherit ]
+@mixin box-direction($direction: normal) {
+	-moz-box-direction: $direction;
+	-webkit-box-direction: $direction;
+	box-direction: $direction;
+}
+// Box flex [ integer ]
+@mixin box-flex($flex: 0) {
+	-moz-box-flex: $flex;
+	-webkit-box-flex: $flex;
+	box-flex: $flex;
+}
+// Box flex group [ integer ]
+@mixin box-flex-group($group: 1) {
+	-moz-box-flex-group: $group;
+	-webkit-box-flex-group: $group;
+	box-flex-group: $group;
+}
+// Box orientation [ horizontal | vertical | inline-axis | block-axis | inherit ]
+@mixin box-orient($orientation: horizontal) {
+	-moz-box-orient: $orientation;
+	-webkit-box-orient: $orientation;
+	box-orient: $orientation;
+}
+// Box ordinal group [ integer ]
+@mixin box-ordinal-group($group: 1) {
+	-moz-box-ordinal-group: $group;
+	-webkit-box-ordinal-group:$group;
+	box-flex-ordinal-group: $group;
+}
+// Box pack  [ start | end | center | justify ]
+@mixin box-pack($pack: start) {
+	-moz-box-pack: $pack;
+	-webkit-box-pack: $pack;
+	box-pack: $pack;
+}
