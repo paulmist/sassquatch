@@ -1,20 +1,24 @@
 /* Sassquatch 1.0 */
-
 // Border Radius
 @mixin border-radius($radius: 5px) {
-  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
   border-radius: $radius;
+  
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
 }
 // Drop shadows
 @mixin box-shadow($shadow: 0 1px 3px rgba(0,0,0,.25)) {
   -webkit-box-shadow: $shadow;
-  -moz-box-shadow: $shadow;
   box-shadow: $shadow;
 }
 // Transitions
 @mixin transition($transition) {
 	-webkit-transition: $transition;
 	-moz-transition: $transition;
+	-ms-transition: $transition;
+	-o-transition: $transition;
 	transition: $transition;
 }
 // CSS3 Content Columns
@@ -28,11 +32,11 @@
 }
 // Opacity
 @mixin opacity($opacity: 0.5) {
-	filter:			alpha(opacity=($opacity * 100));
-	-ms-filter:		"progid:DXImageTransform.Microsoft.Alpha(Opacity=" + ($opacity * 100) + ")";
-	-moz-opacity:	$opacity;
+	filter: alpha(opacity=($opacity * 100));
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" + ($opacity * 100) + ")";
+	-moz-opacity: $opacity;
 	-khtml-opacity: $opacity;
-	opacity:		$opacity;
+	opacity: $opacity;
 }
 // CSS3 Flexible Box Module
 // #flexbox > @mixin display-box; must be used along with other flexbox mixins
